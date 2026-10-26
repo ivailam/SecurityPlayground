@@ -1,0 +1,114 @@
+:root {
+  --primary-bg-color: #ffebc5;
+  --green: #c9cba3;
+  --red-light: #e26d5c;
+  --red-darker: #ac5346;
+}
+body {
+  background-color: var(--primary-bg-color);
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.navbar{
+    background-color: var(--red-light);
+    padding: none;
+    list-style: none;
+    list-style-type: none;
+    margin: 0;
+    border-radius: 5px;
+    overflow: hidden;
+    font-size: 4vh;
+    margin: 0;
+    display: flex;
+    box-shadow: 0 0 0.8rem rgb(0 0 0 / 0.2);
+}
+ul li {
+  list-style-type: none;
+  display: flex;
+} 
+  
+ul li a{
+    text-decoration: none;
+    color:var(--text-color);
+    padding: 0.5em;
+    transition: background-color 150ms ease;    
+}
+
+ul li a:hover {
+  background-color: var(--red-darker);
+}
+.form {
+  background-color: var(--green);
+  padding: 10px 30px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 350px; 
+  margin: 2rem auto; 
+  box-sizing: border-box; 
+  box-shadow: 0 0 0.8rem rgb(0 0 0 / 0.8);
+}
+.Login{
+    font-size: xx-large;
+    text-align: center;    
+}
+.container{
+    padding: 16px;
+}
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 8px 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 2px solid #ccc ;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+input[type=text]:hover, input[type=password]:hover{
+   border: 2px solid var(--red-light) ;
+}
+input[type=text]:focus, input[type=password]:focus{
+    outline: none;
+}
+.login-btn, .logout {
+  background-color: var(--red-light);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block; 
+  margin: 0 auto;   
+  padding: 10px 20px;
+  width: 50%;
+  margin-top: 15px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  box-sizing: border-box;
+  font-size: 1.1rem;
+}
+button:hover {
+  background-color: var(--red-darker);
+}
+
+.successMain{
+  background-color: var(--green);
+  padding: 10px 30px;
+  border-radius: 5px;
+  width: 90%;
+  max-width: 350px; 
+  margin: 2rem auto; 
+  box-sizing: border-box; 
+  box-shadow: 0 0 0.8rem rgb(0 0 0 / 0.2);
+  font-size: x-large;
+  text-align: center;
+}
+.message{
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+.error {
+    background: #fdecea;
+    color: #b71c1c;
+    border: 1px solid #f5c6cb;
+}
+.logout{
+  width: 15pc;
+}
