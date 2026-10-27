@@ -1,25 +1,27 @@
 <?php
 include "connect.php";
 
-$message = "";          // ← holds the message to display
-$css_class = ""; 
+$message = "";  // Stores the message displayed to the user
+$css_class = ""; // Stores the CSS class used to style the message
 
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
-
+// Retrieve the username and password submitted through the login form
 $username = $_POST["username"];
 $password = $_POST["password"];
  
+//Constructs SQL query directly with the user input
 $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
 $result = $conn->query($sql);
 
+// If a matching user is found, redirect to main page
 if ($result->num_rows > 0) 
     { 
        header("Location: main.html");
        exit;
         
     } 
-else 
+else  // If no matching user is found, display an error message
     {
         $message = "Invalid username or password.";
         $css_class = "error";

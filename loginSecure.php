@@ -2,29 +2,34 @@
 session_start(); 
 include "connect.php";
 
-$message = "";          // ← holds the message to display
-$css_class = ""; 
+$message = "";   // Stores the message displayed to the user
+$css_class = ""; // Stores the CSS class used to style the message
 
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
-
-$username = $_POST["username"];
+  // Retrieve the username and password submitted through the login form
+$username = $_POST["username"]; 
 $password = $_POST["password"];
  
-$sql = "SELECT * FROM users WHERE username = ? AND password = ?";
+// Prepare a parameterised SQL query to check the submitted credentials
+$sql = "SELECT * FROM users WHERE username = ? AND password = ?"; 
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("ss", $username, $password);
+
+// Bind the submitted credentials to the query parameters
+$stmt->bind_param("ss", $username, $password);//add the inputed credentials to the query
 $stmt->execute();
 
+// Retrieve the query results
 $result = $stmt->get_result();
 
+ // If a matching user is found, mark the session as logged in and redirect
 if ($result->num_rows > 0) 
     { 
       $_SESSION['logged_in'] = true;
        header("Location: main.php");
        exit;        
     } 
-else 
+else // If no matching user is found, display an error message
     {
         $message = "Invalid username or password.";
         $css_class = "error";

@@ -8,7 +8,7 @@ if (isset($_POST['logout'])) {
     exit;
 }
 
-if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {//if the user has logged in, this page is displayed
     header("Location: login.php");
     exit;
 }
